@@ -6,12 +6,13 @@ import io.github.VitorLopes.arquiteturaspring.montadora.api.Eletrico;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class MontadoraConfiguration {
 
     @Bean(name = "motorAspirado")
-    @Eletrico
+    @Scope("singleton")
     public Motor motorAspirado() {
         var motor = new Motor();
         motor.setCavalos(160);
